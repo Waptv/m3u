@@ -1,0 +1,66 @@
+
+
+
+
+
+
+
+
+
+function applyStreamSource(streamInfo, iframe) {
+
+    // You are using 'p2', which suggests it is designed to handle multiple stream types/parameters.
+    const PLAYER_BASE_URL = 'https://tvgotk.github.io/p2'; 
+    
+    // Encode all parameters retrieved from the M3U parsing logic in the main page.
+    const encodedM3u8 = encodeURIComponent(streamInfo.m3u8);
+    const encodedName = encodeURIComponent(streamInfo.name);
+    const encodedId = encodeURIComponent(streamInfo.id);
+    const encodedTitle = encodeURIComponent(streamInfo.title);
+    const encodedMpd = encodeURIComponent(streamInfo.mpd);
+    const encodedCookie = encodeURIComponent(streamInfo.cookie);
+    const encodedKeyId= encodeURIComponent(streamInfo.keyId);
+    const encodedKey = encodeURIComponent(streamInfo.key);
+
+
+    // 1. Start with the base player URL and the mandatory M3U8 stream URL
+    let playerUrl = `${PLAYER_BASE_URL}?url=${encodedM3u8}`;
+       
+    
+    // DRM/DASH Parameters
+   
+    if (streamInfo.keyId) {
+        playerUrl += `&keyId=${encodedKeyId}`;
+    }
+    if (streamInfo.key) {
+        playerUrl += `&key=${encodedKey}`;
+    }
+    
+    // Other Stream Parameters
+    if (streamInfo.cookie) {
+        playerUrl += `&cookie=${encodedCookie}`;
+    }
+    
+
+    // 3. Set the final player URL to the iframe
+    iframe.src = playerUrl;
+    console.log(`Stream loaded: ${streamInfo.name}`); 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
