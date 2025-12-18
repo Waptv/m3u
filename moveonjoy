@@ -17,7 +17,7 @@ function applyStreamSource(streamInfo, iframe) {
     const encodedName = encodeURIComponent(streamInfo.name);
     const encodedId = encodeURIComponent(streamInfo.id);
     const encodedTitle = encodeURIComponent(streamInfo.title);
-    const encodedMpd = encodeURIComponent(streamInfo.mpd);
+    
     const encodedCookie = encodeURIComponent(streamInfo.cookie);
     const encodedKeyId= encodeURIComponent(streamInfo.keyId);
     const encodedKey = encodeURIComponent(streamInfo.key);
