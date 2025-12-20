@@ -10,7 +10,7 @@
 function applyStreamSource(streamInfo, iframe) {
 
     // You are using 'p2', which suggests it is designed to handle multiple stream types/parameters.
-    const PLAYER_BASE_URL = 'https://tvgotk.github.io/p1'; 
+    const PLAYER_BASE_URL = 'https://tvgotk.github.io/p15'; 
     
     // Encode all parameters retrieved from the M3U parsing logic in the main page.
     const encodedM3u8 = encodeURIComponent(streamInfo.m3u8);
