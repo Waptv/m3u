@@ -16,7 +16,6 @@ function applyStreamSource(streamInfo, iframe) {
     const encodedM3u8 = encodeURIComponent(streamInfo.m3u8);
     const encodedName = encodeURIComponent(streamInfo.name);
     const encodedId = encodeURIComponent(streamInfo.id);
-    const encodedTitle = encodeURIComponent(streamInfo.title);
     
     const encodedCookie = encodeURIComponent(streamInfo.cookie);
     const encodedKeyId= encodeURIComponent(streamInfo.keyId);
